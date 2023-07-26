@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body bgcolor="green">
-<p1>добро пожаловать </p1>
-<h1>меня зовут кутман мне зовут 25</h1>
-<img src="https://www.comingsoon.net/wp-content/uploads/sites/3/2023/05/Screen-Shot-2023-05-14-at-1.35.30-AM.png" alt="eto yu"
-width="300" height="250">
-<p>да я явлаюсь это не секрет</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{title}} </h1>
+<ul>
+    {% for p in posts %}
+    <li>
+        <h2>{{ p.title }}</h2>
+        <p>{{ p.content }}</p>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

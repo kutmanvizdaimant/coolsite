@@ -1,8 +1,13 @@
 from django.db import models
 
-# Create your models here.
-class Product(models.Model):
-    model = models.CharField(max_length=255)
-    price = models.FloatField(default=0)
-    color = models.CharField(max_length=255)
-    date_created = models.DateField(auto_now_add=True)
+
+class Women(models.Model):
+    title = models.CharField(max_length=255)
+    content = models.TextField(blank=True, null=True)
+    photo = models.ImageField(upload_to='images', blank=True, null=True)
+    time_create = models.DateTimeField(auto_now_add=True)
+    time_update = models.DateTimeField(auto_now=True)
+    is_published = models.BooleanField(default=False)
+
+    def str(self):
+        return self.title

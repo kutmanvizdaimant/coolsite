@@ -21,5 +21,5 @@ from women.views import index, about
 
 urlpatterns = [
     path('index/', index),
-    path('kutman/', about),
+    path('about/', about),
 ]
